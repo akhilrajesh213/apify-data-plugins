@@ -1,0 +1,30 @@
+{
+  "name": "google-trends-mcp",
+  "displayName": "Google Trends and Pinterest Trends",
+  "version": "0.1.0",
+  "description": "Google Trends' Trending Now in 125 countries, keyword interest over time with rising and top related searches, keyword comparisons, and Pinterest Trends lists, through an Apify MCP server.",
+  "author": {
+    "name": "Akhil Rajesh",
+    "url": "https://apify.com/akhil_rajesh"
+  },
+  "homepage": "https://apify.com/akhil_rajesh/google-trends-scraper",
+  "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
+  "license": "MIT",
+  "keywords": [
+    "google trends",
+    "trending searches",
+    "keyword research",
+    "seo",
+    "pinterest trends",
+    "mcp"
+  ],
+  "userConfig": {
+    "apify_token": {
+      "type": "string",
+      "title": "Apify API token",
+      "description": "Your Apify API token (Apify Console > Settings > API & Integrations). Runs are billed to your Apify account at the Actor's pay-per-event prices plus platform usage.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

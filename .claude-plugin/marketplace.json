@@ -1,0 +1,54 @@
+{
+  "name": "akhil-rajesh-data",
+  "description": "Live web data for Claude Code: Yahoo Finance, YouTube channels and Google Trends, through Apify MCP servers.",
+  "owner": {
+    "name": "Akhil Rajesh",
+    "url": "https://apify.com/akhil_rajesh"
+  },
+  "plugins": [
+    {
+      "name": "yahoo-finance-mcp",
+      "source": "./plugins/yahoo-finance-mcp",
+      "description": "Stock quotes, price history, options chains with Greeks, financial statements, analyst ratings, ownership, news, SEC filings and market movers from Yahoo Finance, through an Apify MCP server.",
+      "category": "finance",
+      "tags": [
+        "yahoo finance",
+        "stocks",
+        "stock market",
+        "options",
+        "financial statements",
+        "market data",
+        "mcp"
+      ]
+    },
+    {
+      "name": "youtube-channels-mcp",
+      "source": "./plugins/youtube-channels-mcp",
+      "description": "YouTube channel stats (subscribers, exact total views, video count), recent videos and Shorts with views, channel comparisons, channels by topic, playlists and hashtags, through an Apify MCP server. No YouTube API key needed.",
+      "category": "marketing",
+      "tags": [
+        "youtube",
+        "youtube channel",
+        "competitor analysis",
+        "creators",
+        "influencers",
+        "video stats",
+        "mcp"
+      ]
+    },
+    {
+      "name": "google-trends-mcp",
+      "source": "./plugins/google-trends-mcp",
+      "description": "Google Trends' Trending Now in 125 countries, keyword interest over time with rising and top related searches, keyword comparisons, and Pinterest Trends lists, through an Apify MCP server.",
+      "category": "marketing",
+      "tags": [
+        "google trends",
+        "trending searches",
+        "keyword research",
+        "seo",
+        "pinterest trends",
+        "mcp"
+      ]
+    }
+  ]
+}

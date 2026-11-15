@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "youtube-channels": {
+      "type": "http",
+      "url": "https://akhil-rajesh--youtube-channel-scraper.apify.actor/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.apify_token}"
+      }
+    }
+  }
+}
