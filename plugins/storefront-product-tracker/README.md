@@ -1,4 +1,4 @@
-# Shopify store products (Claude Code plugin)
+# Shopify store products (unofficial) (Claude Code plugin)
 
 Products of any Shopify store: prices and compare-at prices, discounts, variants with SKUs and stock, vendors, tags, images and collections, best sellers first and priced for any country, through an Apify MCP server.
 
@@ -8,7 +8,7 @@ The plugin connects Claude Code to the live MCP endpoint of the Apify Actor [sho
 
 ```bash
 claude plugin marketplace add akhilrajesh213/apify-data-plugins
-claude plugin install shopify-mcp@akhil-rajesh-data
+claude plugin install storefront-product-tracker@akhil-rajesh-data
 ```
 
 Claude Code asks for your **Apify API token** when the plugin is enabled and keeps it in your system's credential store. Create a free account at [apify.com](https://apify.com) and copy the token from Apify Console > Settings > API & Integrations.

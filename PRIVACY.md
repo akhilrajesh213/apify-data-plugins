@@ -21,7 +21,7 @@ Nothing else is sent: not your conversation, files, environment variables or oth
 | `youtube-channels-mcp` | `akhil-rajesh--youtube-channel-scraper.apify.actor` | YouTube |
 | `google-trends-mcp` | `akhil-rajesh--google-trends-scraper.apify.actor` | Google Trends and Pinterest Trends |
 | `google-flights-mcp` | `akhil-rajesh--google-flights-mcp-server.apify.actor` | Google Flights |
-| `shopify-mcp` | `akhil-rajesh--shopify-mcp-server.apify.actor` | the Shopify stores named |
+| `storefront-product-tracker` | `akhil-rajesh--shopify-mcp-server.apify.actor` | the Shopify stores named |
 
 Each endpoint is an Apify Actor published by the author of these plugins. It reads only public pages or public data feeds of the source named above (no logged-in or private data) and returns the rows to Claude.
 

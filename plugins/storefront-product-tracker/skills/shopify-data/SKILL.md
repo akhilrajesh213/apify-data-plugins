@@ -3,7 +3,7 @@ name: shopify-data
 description: "Use the shopify MCP tools when the user asks about a Shopify store's products, prices, discounts, best sellers, new arrivals, stock, collections or a competitor's catalogue."
 ---
 
-# Shopify store products
+# Shopify store products (unofficial)
 
 The `shopify` MCP server is the live endpoint of the Apify Actor [shopify-mcp-server](https://apify.com/akhil_rajesh/shopify-mcp-server). Use its tools for live data instead of answering from memory, and name the tool's source in the answer.
 

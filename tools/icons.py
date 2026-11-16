@@ -17,7 +17,7 @@ ACTORS = {
     "youtube-channels-mcp": "youtube-channel-scraper",
     "google-trends-mcp": "google-trends-scraper",
     "google-flights-mcp": "google-flights-mcp-server",
-    "shopify-mcp": "shopify-mcp-server",
+    "storefront-product-tracker": "shopify-mcp-server",
 }
 
 

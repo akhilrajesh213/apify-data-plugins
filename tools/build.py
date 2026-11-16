@@ -19,7 +19,7 @@ DATA = {
     "youtube-channels-mcp": ("channel handles such as `@mkbhd`, a playlist link or a topic", "YouTube"),
     "google-trends-mcp": ("keywords, a country and a time range", "Google Trends and Pinterest Trends"),
     "google-flights-mcp": ("an origin, a destination, dates, passenger counts and filters", "Google Flights"),
-    "shopify-mcp": ("store addresses such as `allbirds.com`, product links and filters", "the Shopify stores named"),
+    "storefront-product-tracker": ("store addresses such as `allbirds.com`, product links and filters", "the Shopify stores named"),
 }
 TOKEN_OPTION = {
     "apify_token": {
@@ -167,8 +167,8 @@ PLUGINS = [
         ],
     },
     {
-        "name": "shopify-mcp",
-        "displayName": "Shopify store products",
+        "name": "storefront-product-tracker",
+        "displayName": "Shopify store products (unofficial)",
         "server": "shopify",
         "actor": "shopify-mcp-server",
         "store": "https://apify.com/akhil_rajesh/shopify-mcp-server",
