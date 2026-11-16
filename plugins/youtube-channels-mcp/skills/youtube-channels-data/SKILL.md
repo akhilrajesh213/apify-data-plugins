@@ -1,6 +1,6 @@
 ---
 name: youtube-channels-data
-description: Use the youtube-channels MCP tools when the user asks about YouTube channels, creators or competitors: subscribers, views, upload pace, recent or popular videos, Shorts, playlists, hashtags, or finding channels on a topic.
+description: "Use the youtube-channels MCP tools when the user asks about YouTube channels, creators or competitors: subscribers, views, upload pace, recent or popular videos, Shorts, playlists, hashtags, or finding channels on a topic."
 ---
 
 # YouTube channel data

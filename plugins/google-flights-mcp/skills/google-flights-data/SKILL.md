@@ -1,6 +1,6 @@
 ---
 name: google-flights-data
-description: Use the google-flights MCP tools when the user asks about flight prices, cheap flights, fares on a route or date, nonstop or business class options, or whether today's fare is low or high for a route.
+description: "Use the google-flights MCP tools when the user asks about flight prices, cheap flights, fares on a route or date, nonstop or business class options, or whether today's fare is low or high for a route."
 ---
 
 # Google Flights fares

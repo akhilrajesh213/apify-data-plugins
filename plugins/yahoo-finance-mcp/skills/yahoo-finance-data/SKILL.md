@@ -1,6 +1,6 @@
 ---
 name: yahoo-finance-data
-description: Use the yahoo-finance MCP tools when the user asks about stocks, ETFs, indices, crypto or currencies: prices, history, fundamentals, options, earnings, analysts, holders, filings, news or the day's movers.
+description: "Use the yahoo-finance MCP tools when the user asks about stocks, ETFs, indices, crypto or currencies: prices, history, fundamentals, options, earnings, analysts, holders, filings, news or the day's movers."
 ---
 
 # Yahoo Finance data

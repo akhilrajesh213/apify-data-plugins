@@ -1,7 +1,7 @@
 {
   "name": "youtube-channels-mcp",
   "displayName": "YouTube channel data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "YouTube channel stats (subscribers, exact total views, video count), recent videos and Shorts with views, channel comparisons, channels by topic, playlists and hashtags, through an Apify MCP server. No YouTube API key needed.",
   "author": {
     "name": "Akhil Rajesh",
@@ -10,6 +10,7 @@
   "homepage": "https://apify.com/akhil_rajesh/youtube-channel-scraper",
   "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/PRIVACY.md",
   "keywords": [
     "youtube",
     "youtube channel",

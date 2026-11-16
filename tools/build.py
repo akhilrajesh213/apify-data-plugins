@@ -11,6 +11,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = {"name": "Akhil Rajesh", "url": "https://apify.com/akhil_rajesh"}
 REPO = "https://github.com/akhilrajesh213/apify-data-plugins"
+VERSION = "0.1.1"  # raise with every release: installs stay on the version they have until it changes
+PRIVACY_URL = f"{REPO}/blob/main/PRIVACY.md"
+# per plugin: an example of the arguments a tool call sends, and the source the endpoint reads
+DATA = {
+    "yahoo-finance-mcp": ("tickers such as `AAPL`, a period, or a company name to look up", "Yahoo Finance"),
+    "youtube-channels-mcp": ("channel handles such as `@mkbhd`, a playlist link or a topic", "YouTube"),
+    "google-trends-mcp": ("keywords, a country and a time range", "Google Trends and Pinterest Trends"),
+    "google-flights-mcp": ("an origin, a destination, dates, passenger counts and filters", "Google Flights"),
+    "shopify-mcp": ("store addresses such as `allbirds.com`, product links and filters", "the Shopify stores named"),
+}
 TOKEN_OPTION = {
     "apify_token": {
         "type": "string",
@@ -200,17 +210,32 @@ def url(p):
     return f"https://akhil-rajesh--{p['actor']}.apify.actor/mcp"
 
 
+def data_section(p):
+    host = url(p).split("/")[2]
+    example, source = DATA[p["name"]]
+    p = {**p, "data_example": example, "source": source}
+    return f"""This plugin runs no code on your machine. It adds one remote MCP server and one skill (instructions for Claude).
+
+- **What is sent, and where:** when Claude calls one of the tools, Claude Code sends the tool's arguments (for example {p['data_example']}) and your Apify API token, as an `Authorization` header, over HTTPS to `{host}`, the Actor's endpoint on the Apify platform. Nothing else from your conversation, files or machine is sent.
+- **What the endpoint does with it:** the Actor reads the public pages or public data feeds of {p['source']} that answer the request, returns the rows to Claude, and stores them in your own Apify account (a run's dataset), where Apify charges for them. It reads no logged-in or private data.
+- **Who keeps what:** the run, its input and its rows stay in your Apify account under Apify's [privacy policy](https://apify.com/privacy-policy) and data retention, and you can delete them there. The plugin's author receives no copy of your requests, results or token, only the aggregate run counts and earnings Apify shows every Actor owner.
+- **Your token** is kept by Claude Code in your system's credential store, never in a settings file, and is sent only to the endpoint above.
+
+Full policy: [PRIVACY.md]({PRIVACY_URL})."""
+
+
 def plugin_files(p):
     base = ROOT / "plugins" / p["name"]
     manifest = {
         "name": p["name"],
         "displayName": p["displayName"],
-        "version": "0.1.0",
+        "version": VERSION,
         "description": p["description"],
         "author": OWNER,
         "homepage": p["store"],
         "repository": REPO,
         "license": "MIT",
+        "privacyPolicyUrl": PRIVACY_URL,
         "keywords": p["keywords"],
         "userConfig": TOKEN_OPTION,
     }
@@ -225,7 +250,7 @@ def plugin_files(p):
     tips = "\n".join(f"- {t}" for t in p["tips"])
     skill = f"""---
 name: {p['server']}-data
-description: Use the {p['server']} MCP tools when {p['when']}.
+description: "Use the {p['server']} MCP tools when {p['when']}."
 ---
 
 # {p['displayName']}
@@ -275,6 +300,10 @@ Claude Code asks for your **Apify API token** when the plugin is enabled and kee
 ## Cost
 
 Calls run on your Apify account at the Actor's pay-per-event prices, shown on its [Apify page]({p['store']}), plus platform usage while the endpoint's run serves you. Apify's free plan includes monthly credits.
+
+## Data and privacy
+
+{data_section(p)}
 
 > This is an independent tool, not affiliated with or endorsed by the owners of the data source. All product and company names are the property of their respective owners.
 """
@@ -363,6 +392,48 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+""")
+    endpoints = "\n".join(f"| `{p['name']}` | `{url(p).split('/')[2]}` | {DATA[p['name']][1]} |" for p in PLUGINS)
+    write(ROOT / "PRIVACY.md", f"""# Privacy policy
+
+Applies to every plugin in this repository ({REPO}). Last updated 2026-11-16.
+
+## What the plugins are
+
+Each plugin is a configuration file that adds one remote MCP server to Claude Code, plus a skill: written instructions telling Claude when to use that server. The plugins contain no code that runs on your machine, collect no analytics and have no servers of their own.
+
+## What is sent, and to whom
+
+When Claude calls one of a plugin's tools, Claude Code sends two things over HTTPS to that plugin's endpoint on the [Apify](https://apify.com) platform:
+
+1. the tool's arguments, which Claude writes from your request (tickers, channel handles, keywords, routes and dates, store addresses), and
+2. your Apify API token, in an `Authorization` header, so that the call runs on your Apify account.
+
+Nothing else is sent: not your conversation, files, environment variables or other credentials.
+
+| Plugin | Endpoint | Public data it reads |
+|---|---|---|
+{endpoints}
+
+Each endpoint is an Apify Actor published by the author of these plugins. It reads only public pages or public data feeds of the source named above (no logged-in or private data) and returns the rows to Claude.
+
+## Where the data is kept
+
+Every call is an Apify run on **your** Apify account. Its input, log and result rows are stored in your account's storage under [Apify's privacy policy](https://apify.com/privacy-policy) and Apify's retention periods, and you can view or delete them in Apify Console. Apify charges your account for the rows at each Actor's published prices.
+
+The plugins' author is the Actors' owner on Apify. Apify does not show Actor owners other users' runs, inputs, results or tokens; the author sees only aggregate figures Apify reports to every Actor owner (such as run counts, users and earnings).
+
+## Your token
+
+Claude Code asks for your Apify API token when you enable a plugin and keeps it in your operating system's credential store (marked `sensitive` in the plugin), never in a settings file. It is sent only to the plugin's endpoint. You can revoke it at any time in Apify Console > Settings > API & Integrations.
+
+## Children
+
+The plugins are not intended for people under 18.
+
+## Changes and contact
+
+Changes to this policy are committed to this repository, and its history shows every version. Questions: open an issue at {REPO}/issues.
 """)
     print("wrote", ROOT)
 

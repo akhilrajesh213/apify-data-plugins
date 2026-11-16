@@ -1,7 +1,7 @@
 {
   "name": "google-flights-mcp",
   "displayName": "Google Flights fares",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Live Google Flights fares for any route and date: the cheapest and cheapest nonstop fare, Google's price level and price history, and each flight's price, airlines, times, stops, layovers, aircraft and CO2, through an Apify MCP server.",
   "author": {
     "name": "Akhil Rajesh",
@@ -10,6 +10,7 @@
   "homepage": "https://apify.com/akhil_rajesh/google-flights-mcp-server",
   "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/PRIVACY.md",
   "keywords": [
     "google flights",
     "flights",

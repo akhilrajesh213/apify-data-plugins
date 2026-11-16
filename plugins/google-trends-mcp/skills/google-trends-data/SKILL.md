@@ -1,6 +1,6 @@
 ---
 name: google-trends-data
-description: Use the google-trends MCP tools when the user asks what people are searching for, whether interest in a topic is rising, how keywords compare, where a topic is popular, related or rising searches, or what is trending on Pinterest.
+description: "Use the google-trends MCP tools when the user asks what people are searching for, whether interest in a topic is rising, how keywords compare, where a topic is popular, related or rising searches, or what is trending on Pinterest."
 ---
 
 # Google Trends and Pinterest Trends

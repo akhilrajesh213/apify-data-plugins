@@ -1,7 +1,7 @@
 {
   "name": "yahoo-finance-mcp",
   "displayName": "Yahoo Finance data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stock quotes, price history, options chains with Greeks, financial statements, analyst ratings, ownership, news, SEC filings and market movers from Yahoo Finance, through an Apify MCP server.",
   "author": {
     "name": "Akhil Rajesh",
@@ -10,6 +10,7 @@
   "homepage": "https://apify.com/akhil_rajesh/yahoo-finance-scraper",
   "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/PRIVACY.md",
   "keywords": [
     "yahoo finance",
     "stocks",

@@ -1,7 +1,7 @@
 {
   "name": "google-trends-mcp",
   "displayName": "Google Trends and Pinterest Trends",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Google Trends' Trending Now in 125 countries, keyword interest over time with rising and top related searches, keyword comparisons, and Pinterest Trends lists, through an Apify MCP server.",
   "author": {
     "name": "Akhil Rajesh",
@@ -10,6 +10,7 @@
   "homepage": "https://apify.com/akhil_rajesh/google-trends-scraper",
   "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
   "license": "MIT",
+  "privacyPolicyUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/PRIVACY.md",
   "keywords": [
     "google trends",
     "trending searches",

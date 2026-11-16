@@ -1,6 +1,6 @@
 ---
 name: shopify-data
-description: Use the shopify MCP tools when the user asks about a Shopify store's products, prices, discounts, best sellers, new arrivals, stock, collections or a competitor's catalogue.
+description: "Use the shopify MCP tools when the user asks about a Shopify store's products, prices, discounts, best sellers, new arrivals, stock, collections or a competitor's catalogue."
 ---
 
 # Shopify store products
