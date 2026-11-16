@@ -1,6 +1,6 @@
 {
   "name": "akhil-rajesh-data",
-  "description": "Live web data for Claude Code: Yahoo Finance, YouTube channels and Google Trends, through Apify MCP servers.",
+  "description": "Live web data for Claude Code: Yahoo Finance, YouTube channels, Google Trends, Google Flights and Shopify stores, through Apify MCP servers.",
   "owner": {
     "name": "Akhil Rajesh",
     "url": "https://apify.com/akhil_rajesh"
@@ -47,6 +47,35 @@
         "keyword research",
         "seo",
         "pinterest trends",
+        "mcp"
+      ]
+    },
+    {
+      "name": "google-flights-mcp",
+      "source": "./plugins/google-flights-mcp",
+      "description": "Live Google Flights fares for any route and date: the cheapest and cheapest nonstop fare, Google's price level and price history, and each flight's price, airlines, times, stops, layovers, aircraft and CO2, through an Apify MCP server.",
+      "category": "travel",
+      "tags": [
+        "google flights",
+        "flights",
+        "airfare",
+        "flight prices",
+        "cheap flights",
+        "travel",
+        "mcp"
+      ]
+    },
+    {
+      "name": "shopify-mcp",
+      "source": "./plugins/shopify-mcp",
+      "description": "Products of any Shopify store: prices and compare-at prices, discounts, variants with SKUs and stock, vendors, tags, images and collections, best sellers first and priced for any country, through an Apify MCP server.",
+      "category": "ecommerce",
+      "tags": [
+        "shopify",
+        "ecommerce",
+        "product data",
+        "competitor prices",
+        "product research",
         "mcp"
       ]
     }

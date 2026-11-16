@@ -1,0 +1,31 @@
+{
+  "name": "google-flights-mcp",
+  "displayName": "Google Flights fares",
+  "version": "0.1.0",
+  "description": "Live Google Flights fares for any route and date: the cheapest and cheapest nonstop fare, Google's price level and price history, and each flight's price, airlines, times, stops, layovers, aircraft and CO2, through an Apify MCP server.",
+  "author": {
+    "name": "Akhil Rajesh",
+    "url": "https://apify.com/akhil_rajesh"
+  },
+  "homepage": "https://apify.com/akhil_rajesh/google-flights-mcp-server",
+  "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
+  "license": "MIT",
+  "keywords": [
+    "google flights",
+    "flights",
+    "airfare",
+    "flight prices",
+    "cheap flights",
+    "travel",
+    "mcp"
+  ],
+  "userConfig": {
+    "apify_token": {
+      "type": "string",
+      "title": "Apify API token",
+      "description": "Your Apify API token (Apify Console > Settings > API & Integrations). Runs are billed to your Apify account at the Actor's pay-per-event prices plus platform usage.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

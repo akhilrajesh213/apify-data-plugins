@@ -122,6 +122,72 @@ PLUGINS = [
             "Keyword rows cost more than trend rows: ask only for the keywords and countries the question needs.",
         ],
     },
+    {
+        "name": "google-flights-mcp",
+        "displayName": "Google Flights fares",
+        "server": "google-flights",
+        "actor": "google-flights-mcp-server",
+        "store": "https://apify.com/akhil_rajesh/google-flights-mcp-server",
+        "category": "travel",
+        "keywords": ["google flights", "flights", "airfare", "flight prices", "cheap flights", "travel", "mcp"],
+        "description": "Live Google Flights fares for any route and date: the cheapest and cheapest nonstop fare, Google's "
+                       "price level and price history, and each flight's price, airlines, times, stops, layovers, aircraft "
+                       "and CO2, through an Apify MCP server.",
+        "tools": [
+            ("search_flights", "fares for a route on up to 3 departure dates, one way or round trip, with cabin, stops, "
+                               "airline, price, duration and departure-time filters"),
+            ("find_airport", "the airports and cities Google Flights offers for a name, with their codes (free)"),
+            ("run_actor", "the Actor's whole input in one call, for several routes or Google Flights links"),
+        ],
+        "when": "the user asks about flight prices, cheap flights, fares on a route or date, nonstop or business class "
+                "options, or whether today's fare is low or high for a route",
+        "examples": [
+            "What's the cheapest flight from Toronto to London on December 10?",
+            "Find nonstop business class flights New York to Paris next month.",
+            "Round trip LAX to Tokyo for a week, leaving in 45 days: is the price low right now?",
+            "Compare fares from Chicago to Cancun on three Saturdays in March.",
+        ],
+        "tips": [
+            "Places can be cities ('Toronto'), airport codes ('YYZ') or several codes with '/' ('JFK/EWR'); ask "
+            "`find_airport` when a name is ambiguous.",
+            "Fares are for all passengers together, in the currency asked for (USD by default); set `country` and "
+            "`currency` for the user's market.",
+            "`max_flights` is 10 by default; 0 returns only each date's cheapest fare and price level, the cheapest way to ask.",
+            "If a filter is refused (the answer says why), tell the user rather than guessing fares.",
+        ],
+    },
+    {
+        "name": "shopify-mcp",
+        "displayName": "Shopify store products",
+        "server": "shopify",
+        "actor": "shopify-mcp-server",
+        "store": "https://apify.com/akhil_rajesh/shopify-mcp-server",
+        "category": "ecommerce",
+        "keywords": ["shopify", "ecommerce", "product data", "competitor prices", "product research", "mcp"],
+        "description": "Products of any Shopify store: prices and compare-at prices, discounts, variants with SKUs and stock, "
+                       "vendors, tags, images and collections, best sellers first and priced for any country, through an "
+                       "Apify MCP server.",
+        "tools": [
+            ("get_products", "a store's or collection's products in the store's order, with keyword, vendor, type, tag, "
+                             "price, stock, sale and date filters"),
+            ("get_product", "single products by link, with every variant, image, the full description and SEO texts"),
+            ("list_collections", "a store's collections (categories) with their links"),
+            ("run_actor", "the Actor's whole input in one call"),
+        ],
+        "when": "the user asks about a Shopify store's products, prices, discounts, best sellers, new arrivals, stock, "
+                "collections or a competitor's catalogue",
+        "examples": [
+            "What are allbirds.com's best sellers and their prices?",
+            "Which products on gymshark.com are on sale right now, and by how much?",
+            "Show me this store's products published in the last 30 days.",
+            "Compare this product's price in the US and the UK.",
+        ],
+        "tips": [
+            "Stores can be a domain ('allbirds.com'), a collection link or product links; up to 5 per call and 100 rows in all.",
+            "Some stores with a custom front end don't answer; the answer names them as not read.",
+            "Use `product_details` only when the question needs full descriptions or every image: it makes rows much larger.",
+        ],
+    },
 ]
 
 
@@ -220,7 +286,7 @@ def main():
         plugin_files(p)
     market = {
         "name": "akhil-rajesh-data",
-        "description": "Live web data for Claude Code: Yahoo Finance, YouTube channels and Google Trends, through Apify MCP servers.",
+        "description": "Live web data for Claude Code: Yahoo Finance, YouTube channels, Google Trends, Google Flights and Shopify stores, through Apify MCP servers.",
         "owner": OWNER,
         "plugins": [
             {
@@ -270,7 +336,7 @@ The same endpoints work in Claude Desktop, Cursor and any client that speaks Str
 
 ## Disclaimer
 
-These are independent tools, not affiliated with or endorsed by Yahoo, Google, YouTube or Pinterest. All product and company names are the property of their respective owners.
+These are independent tools, not affiliated with or endorsed by Yahoo, Google, YouTube, Pinterest or Shopify. All product and company names are the property of their respective owners.
 
 ## License
 

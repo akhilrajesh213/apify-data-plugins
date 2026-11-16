@@ -1,0 +1,30 @@
+{
+  "name": "shopify-mcp",
+  "displayName": "Shopify store products",
+  "version": "0.1.0",
+  "description": "Products of any Shopify store: prices and compare-at prices, discounts, variants with SKUs and stock, vendors, tags, images and collections, best sellers first and priced for any country, through an Apify MCP server.",
+  "author": {
+    "name": "Akhil Rajesh",
+    "url": "https://apify.com/akhil_rajesh"
+  },
+  "homepage": "https://apify.com/akhil_rajesh/shopify-mcp-server",
+  "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
+  "license": "MIT",
+  "keywords": [
+    "shopify",
+    "ecommerce",
+    "product data",
+    "competitor prices",
+    "product research",
+    "mcp"
+  ],
+  "userConfig": {
+    "apify_token": {
+      "type": "string",
+      "title": "Apify API token",
+      "description": "Your Apify API token (Apify Console > Settings > API & Integrations). Runs are billed to your Apify account at the Actor's pay-per-event prices plus platform usage.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "google-flights": {
+      "type": "http",
+      "url": "https://akhil-rajesh--google-flights-mcp-server.apify.actor/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.apify_token}"
+      }
+    }
+  }
+}

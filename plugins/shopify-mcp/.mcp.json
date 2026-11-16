@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "shopify": {
+      "type": "http",
+      "url": "https://akhil-rajesh--shopify-mcp-server.apify.actor/mcp",
+      "headers": {
+        "Authorization": "Bearer ${user_config.apify_token}"
+      }
+    }
+  }
+}
