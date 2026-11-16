@@ -11,6 +11,9 @@
   "repository": "https://github.com/akhilrajesh213/apify-data-plugins",
   "license": "MIT",
   "privacyPolicyUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/akhilrajesh213/apify-data-plugins/issues",
+  "documentationUrl": "https://github.com/akhilrajesh213/apify-data-plugins/blob/main/plugins/google-trends-mcp/README.md",
+  "termsOfServiceUrl": "https://docs.apify.com/legal/general-terms-and-conditions",
   "keywords": [
     "google trends",
     "trending searches",

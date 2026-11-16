@@ -236,6 +236,10 @@ def plugin_files(p):
         "repository": REPO,
         "license": "MIT",
         "privacyPolicyUrl": PRIVACY_URL,
+        "supportUrl": f"{REPO}/issues",
+        "documentationUrl": f"{REPO}/blob/main/plugins/{p['name']}/README.md",
+        # calls run on the user's own Apify account, so Apify's terms govern them
+        "termsOfServiceUrl": "https://docs.apify.com/legal/general-terms-and-conditions",
         "keywords": p["keywords"],
         "userConfig": TOKEN_OPTION,
     }
